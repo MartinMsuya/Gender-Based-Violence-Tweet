@@ -1,8 +1,9 @@
-pandas
-numpy
+pandas==1.4.2
+numpy==1.21.5
 matplotlib
-seaborn
-sklearn
-joblib
-lightgbm
+seaborn==0.11.2
+scikit-learn==1.1.2
+joblib==1.1.0
+lightgbm==3.3.2
 langdetect
+streamlit==1.12.0
