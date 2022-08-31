@@ -5,4 +5,4 @@ seaborn
 sklearn
 joblib
 lightgbm
-detect
+langdetect
