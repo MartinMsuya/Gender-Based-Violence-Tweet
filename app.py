@@ -18,7 +18,7 @@ submit = my_form.form_submit_button(label="make prediction")
 # load the model and count_vectorizer
 
 with open(
-    join(dirname(realpath(__file__)), "model/LGBMClassifier.pkl"), "rb"
+    join(dirname(realpath(__file__)), "Model/LGBMClassifier.pkl"), "rb"
 ) as m:
     model = joblib.load(m)
 
