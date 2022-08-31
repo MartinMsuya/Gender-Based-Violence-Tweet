@@ -15,8 +15,8 @@ To access and use the application, download or clone the repository and then run
 	streamlit run app.py<br>
 Finally browse the link provided in your browser.<br>
 <h2>Streamlit Cloud</h2>
-The application has been deployed in the Streamlit Cloud. You can access here:
-https://martinmsuya-gender-based-violence-tweet-app/app.py<br>
+The application has been deployed in the Streamlit Cloud. You can access here:<br>
+https://martinmsuya-gender-based-violence-tweet-app-ytf70o.streamlitapp.com/<br>
 <h2>Issues</h2>
 Incase you have any difficulties or issues while trying to run the app you can raise it on the issues section.<br>
 <h2>Pull Requests</h2>
