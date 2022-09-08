@@ -1,3 +1,6 @@
+from ctypes import alignment
+from tkinter import CENTER
+from turtle import width
 import streamlit as st
 import requests as r
 from os.path import dirname, join, realpath
@@ -6,8 +9,8 @@ from langdetect import detect
 
 # add banner image
 st.header("Gender-Based Violence Tweet App")
-st.image("Image/gbv.png")
-st.write('A simple App used to predict whether tweets are among the category or type, which are sexual violence, emotional violence, harmful traditional practices, physical violence and economic violence. ')
+st.image("Image/gbv.png", width = 400)
+st.write('A machine learning App used to predict whether tweets are among the category or type, which are sexual violence, emotional violence, harmful traditional practices, physical violence and economic violence. ')
 
 # form to collect news content
 my_form = st.form(key="tweet_form")
@@ -18,7 +21,7 @@ submit = my_form.form_submit_button(label="make prediction")
 # load the model and count_vectorizer
 
 with open(
-    join(dirname(realpath(__file__)), "Model/LGBMClassifier.pkl"), "rb"
+    join(dirname(realpath(__file__)), "Model/KNNClassifier.pkl"), "rb"
 ) as m:
     model = joblib.load(m)
 
@@ -46,10 +49,8 @@ if submit:
 
         # Display results of the NLP task
         st.header("Results")
-        if output == 0:
-            st.write("The Gender-based Violence of the tweet is {} and its probability {}  ".format(classifiers[output]))
-            st.write("Probability of the tweet is {}   ".format(probability))
-        elif output == 1:
+        
+        if output == 1:
             st.write("The Gender-based Violence of the tweet is {} ".format(classifiers[output]))
             st.write("Probability of the tweet is {}   ".format(probability))
         elif output == 2:
@@ -60,6 +61,9 @@ if submit:
             st.write("Probability of the tweet is {}   ".format(probability))
         elif output == 4:
             st.write("The Gender-based Violence of the tweet is {} ".format(classifiers[output]))
+            st.write("Probability of the tweet is {}   ".format(probability))
+        elif output == 0:
+            st.write("The Gender-based Violence of the tweet is {}  ".format(classifiers[output]))
             st.write("Probability of the tweet is {}   ".format(probability))
         else:
             st.write(" ⚠️ The tweet is not in categories of Gender based violence. Please make sure the input is based on these categories")
